@@ -3,14 +3,14 @@ import Card from "./Card";
 
 describe("Card component renders", () => {
     test("Component contains all required fields: card name", () => {
-        render(<Card />);
+        const { container } = render(<Card cardName="Some Card" cardImageSource="#"/>);
 
-        expect(screen.getByRole('textbox', {name: "card-name"})).toBeInTheDocument();
+        expect(container.querySelector(".card-name")).toBeInTheDocument();
     });
 
     test("Component contains all required fields: card image", () => {
-        render(<Card />);
+        const { container } = render(<Card cardName="Some Card" cardImageSource="#" />);
 
-        expect(screen.getByRole('image', {name: "card-image"})).toBeInTheDocument();
+        expect(container.querySelector(".card-image")).toBeInTheDocument();
     });
 });
