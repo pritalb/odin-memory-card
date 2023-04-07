@@ -3,8 +3,10 @@
     --foreground-color: #F9EBE0;
     --accent-color:  #00C2D1;
     /* #C0F5FA, #87F1FF     */
+
     width: 230px;
     height: 350px;
+    perspective: 1000px;
 }
 
 .card-front {
@@ -67,4 +69,30 @@
 .card-front-logo {
     width: 200px;
     object-fit: cover;
+}
+
+
+/* Card Flipping */
+
+.card-sides-container {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.flipped .card-sides-container{
+    transform: rotateY(-180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+}
+
+.card-back {
+    transform: rotateY(180deg);
 }
