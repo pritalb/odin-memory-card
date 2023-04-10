@@ -6,7 +6,11 @@ const Card = ({cardName, cardImageSource}) => {
 
     const onClick = () => {
         console.log("clicked");
-        setIsCardFlipped(!isCardFlipped);
+        setIsCardFlipped(true);
+
+        setTimeout(() => {
+            setIsCardFlipped(false);
+        }, 2500);
     }
 
     return (
