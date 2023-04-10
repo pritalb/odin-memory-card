@@ -1,0 +1,22 @@
+#game-board {
+    color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.game-board-ui {
+    display: flex;
+    flex-direction: row;
+    width: 95vw;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.game-play-area {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    padding-top: 50px;
+    width: 80vw;
+    row-gap: 30px;
+}
