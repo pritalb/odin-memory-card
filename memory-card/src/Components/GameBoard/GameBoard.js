@@ -1,8 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './GameBoard.css';
 import Card from '../Card/Card.js';
 
 const GameBoard = () => {
+    const [cardsArray, setCardsArray] = useState([
+        <Card cardName="Space Ishtar" cardImageSource="/Assets/Images/spaceIshtar.jpg" />,
+        <Card cardName="Mashu Kyrielight" cardImageSource="/Assets/Images/mash.jpg" />,
+        <Card cardName="Mashu Kyrielight" cardImageSource="/Assets/Images/mash.jpg" />,
+        <Card cardName="Mashu Kyrielight" cardImageSource="/Assets/Images/mash.jpg" />,
+        <Card cardName="Mashu Kyrielight" cardImageSource="/Assets/Images/mash.jpg" />,
+        <Card cardName="Mashu Kyrielight" cardImageSource="/Assets/Images/mash.jpg" />,
+        <Card cardName="Mashu Kyrielight" cardImageSource="/Assets/Images/mash.jpg" />,
+        <Card cardName="Mashu Kyrielight" cardImageSource="/Assets/Images/mash.jpg" />,
+        <Card cardName="Mashu Kyrielight" cardImageSource="/Assets/Images/mash.jpg" />,
+        <Card cardName="Mashu Kyrielight" cardImageSource="/Assets/Images/mash.jpg" />,
+    ]);
+
     return (
         <div id='game-board'>
             <div className='game-board-ui'>
@@ -12,16 +25,7 @@ const GameBoard = () => {
             </div>
 
             <div className='game-play-area'>
-                <Card cardName="Space Ishtar" cardImageSource="/Assets/Images/spaceIshtar.jpg" />
-                <Card cardName="Mashu Kyrielight" cardImageSource="/Assets/Images/mash.jpg" />
-                <Card cardName="Mashu Kyrielight" cardImageSource="/Assets/Images/mash.jpg" />
-                <Card cardName="Mashu Kyrielight" cardImageSource="/Assets/Images/mash.jpg" />
-                <Card cardName="Mashu Kyrielight" cardImageSource="/Assets/Images/mash.jpg" />
-                <Card cardName="Mashu Kyrielight" cardImageSource="/Assets/Images/mash.jpg" />
-                <Card cardName="Mashu Kyrielight" cardImageSource="/Assets/Images/mash.jpg" />
-                <Card cardName="Mashu Kyrielight" cardImageSource="/Assets/Images/mash.jpg" />
-                <Card cardName="Mashu Kyrielight" cardImageSource="/Assets/Images/mash.jpg" />
-                <Card cardName="Mashu Kyrielight" cardImageSource="/Assets/Images/mash.jpg" />
+                { cardsArray }
             </div>
         </div>
     )
