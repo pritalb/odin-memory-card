@@ -6,14 +6,14 @@ const GameBoard = () => {
     const [cardsArray, setCardsArray] = useState([
         <Card cardName="Space Ishtar" cardImageSource="/Assets/Images/spaceIshtar.jpg" />,
         <Card cardName="Mashu Kyrielight" cardImageSource="/Assets/Images/mash.jpg" />,
-        <Card cardName="Mashu Kyrielight" cardImageSource="/Assets/Images/mash.jpg" />,
-        <Card cardName="Mashu Kyrielight" cardImageSource="/Assets/Images/mash.jpg" />,
-        <Card cardName="Mashu Kyrielight" cardImageSource="/Assets/Images/mash.jpg" />,
-        <Card cardName="Mashu Kyrielight" cardImageSource="/Assets/Images/mash.jpg" />,
-        <Card cardName="Mashu Kyrielight" cardImageSource="/Assets/Images/mash.jpg" />,
-        <Card cardName="Mashu Kyrielight" cardImageSource="/Assets/Images/mash.jpg" />,
-        <Card cardName="Mashu Kyrielight" cardImageSource="/Assets/Images/mash.jpg" />,
-        <Card cardName="Mashu Kyrielight" cardImageSource="/Assets/Images/mash.jpg" />,
+        <Card cardName="Musashi Miyamoto" cardImageSource="/Assets/Images/musashi.jpg" />,
+        <Card cardName="Ushiwakamaru" cardImageSource="/Assets/Images/ushi.png" />,
+        <Card cardName="Anastasia" cardImageSource="/Assets/Images/anastasia.jpg" />,
+        <Card cardName="Quetzalcoatl" cardImageSource="/Assets/Images/quetzalcoatl.jpg" />,
+        <Card cardName="BB" cardImageSource="/Assets/Images/bb.jpg" />,
+        <Card cardName="Artoria Caster" cardImageSource="/Assets/Images/artoria caster.jpg" />,
+        <Card cardName="Morgan Le Fae" cardImageSource="/Assets/Images/morgan.jpg" />,
+        <Card cardName="Ereshkigal" cardImageSource="/Assets/Images/ereshkigal.jpg" />,
     ]);
 
     return (
