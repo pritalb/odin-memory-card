@@ -1,16 +1,33 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Card.css';
 
-const Card = ({cardName, cardImageSource}) => {
-    const [isCardFlipped, setIsCardFlipped] = useState(false);
+const Card = ({cardName, cardImageSource, isClickable, isFlippedAtStart}) => {
+    const [isCardFlipped, setIsCardFlipped] = useState(true);
 
-    const onClick = () => {
-        console.log("clicked");
+    useEffect(() => {
+        // if(!isFlippedAtStart) {
+        //     setIsCardFlipped(false);
+        // }
+
+        // if(isClickable === undefined) {
+        //     isClickable = true;
+        // }
+        flipCard(4000);
+    }, [])
+
+    const flipCard = (timeout) => {
         setIsCardFlipped(true);
-
+    
         setTimeout(() => {
             setIsCardFlipped(false);
-        }, 2500);
+        }, timeout);
+    }
+
+    const onClick = (e) => {
+        // if (isClickable) {
+            console.log("clicked");
+            flipCard(2500)
+        // }
     }
 
     return (

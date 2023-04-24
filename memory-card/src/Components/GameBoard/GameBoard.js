@@ -20,12 +20,17 @@ const GameBoard = () => {
         <div id='game-board'>
             <div className='game-board-ui'>
                 <div className='game-chances'> Chances: 3 </div>
-                <div className='game-instructions'> Do not click on the same card twice! </div>
+                <div className='game-instructions'> Find the correct card! </div>
                 <div className='game-score'> Score: 0 </div>
             </div>
 
-            <div className='game-play-area'>
-                { cardsArray }
+            <div>
+                <div className='target-card-container'>
+                <Card cardName="Space Ishtar" cardImageSource="/Assets/Images/spaceIshtar.jpg"/>
+                </div>
+                <div className='game-play-area'>
+                    { cardsArray }
+                </div>
             </div>
         </div>
     )
