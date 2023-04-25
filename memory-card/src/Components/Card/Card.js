@@ -5,7 +5,7 @@ const Card = ({cardName, cardImageSource, canBeFlipped}) => {
     const [isCardFlipped, setIsCardFlipped] = useState(true);
 
     useEffect(() => {
-        flipCard(4000);
+        flipCard(3000);
     }, [])
 
     const flipCard = (timeout) => {
@@ -19,10 +19,8 @@ const Card = ({cardName, cardImageSource, canBeFlipped}) => {
     }
 
     const onClick = (e) => {
-        // if (isClickable) {
-            console.log("clicked");
-            flipCard(2500)
-        // }
+        console.log("clicked");
+        flipCard(2500)
     }
 
     return (

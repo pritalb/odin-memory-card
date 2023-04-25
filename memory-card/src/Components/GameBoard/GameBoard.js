@@ -70,6 +70,8 @@ const GameBoard = () => {
         },
     ])
 
+    const [targetCard, setTargetCard] = useState(cardsArray[3]);
+
     return (
         <div id='game-board'>
             <div className='game-board-ui'>
@@ -80,7 +82,7 @@ const GameBoard = () => {
 
             <div>
                 <div className='target-card-container'>
-                <Card cardName="Space Ishtar" cardImageSource="/Assets/Images/spaceIshtar.jpg"/>
+                    <Card cardName={targetCard.name} cardImageSource={targetCard.image} canBeFlipped={false}/>
                 </div>
                 <div className='game-play-area'>
                     { cardsArray.map((card) => {
