@@ -83,9 +83,9 @@ const GameBoard = () => {
     const [targetCard, setTargetCard] = useState(cardsArray[3]);
     const [clickedCardName, setClickedCardName] = useState("");
     const [gameOn, setGameOn] = useState(false);
+    const [score, setScore] = useState(0);
 
     useEffect(() => {
-        console.log(clickedCardName);
         if (gameOn) {
             compareCards();
         }
@@ -109,6 +109,7 @@ const GameBoard = () => {
 
     const correctCard = () => {
         console.log("correct");
+        setScore(score + 1);
     }
 
     const wrongCard = () => {
@@ -120,7 +121,7 @@ const GameBoard = () => {
             <div className='game-board-ui'>
                 <div className='game-chances'> Chances: 3 </div>
                 <div className='game-instructions'> Find the correct card! </div>
-                <div className='game-score'> Score: 0 </div>
+                <div className='game-score'> Score: {score} </div>
             </div>
             {
                 gameOn 
