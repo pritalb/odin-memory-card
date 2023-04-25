@@ -86,7 +86,9 @@ const GameBoard = () => {
 
     useEffect(() => {
         console.log(clickedCardName);
-        compareCards();
+        if (gameOn) {
+            compareCards();
+        }
     }, [clickedCardName])
 
     const startGame = () => {
