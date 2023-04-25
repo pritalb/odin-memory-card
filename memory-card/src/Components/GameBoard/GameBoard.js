@@ -71,6 +71,15 @@ const GameBoard = () => {
     ])
 
     const [targetCard, setTargetCard] = useState(cardsArray[3]);
+    const [gameOn, setGameOn] = useState(false);
+
+    const startGame = () => {
+        setGameOn(true);
+    }
+
+    const stopGame = () => {
+        setGameOn(false);
+    }
 
     return (
         <div id='game-board'>
@@ -79,17 +88,24 @@ const GameBoard = () => {
                 <div className='game-instructions'> Find the correct card! </div>
                 <div className='game-score'> Score: 0 </div>
             </div>
-
-            <div>
-                <div className='target-card-container'>
-                    <Card cardName={targetCard.name} cardImageSource={targetCard.image} canBeFlipped={false}/>
-                </div>
-                <div className='game-play-area'>
-                    { cardsArray.map((card) => {
-                        return <Card cardName={card.name} cardImageSource={card.image} canBeFlipped={card.canBeFlipped}/>;
-                    })}
-                </div>
-            </div>
+            {
+                gameOn 
+                ?
+                    <div>
+                        <div className='target-card-container'>
+                            <Card cardName={targetCard.name} cardImageSource={targetCard.image} canBeFlipped={false}/>
+                        </div>
+                        <div className='game-play-area'>
+                            { cardsArray.map((card) => {
+                                return <Card cardName={card.name} cardImageSource={card.image} canBeFlipped={card.canBeFlipped}/>;
+                            })}
+                        </div>
+                    </div>
+                :
+                    <div>
+                        <button onClick={startGame}> Start Game </button>
+                    </div>
+            }
         </div>
     )
 }
