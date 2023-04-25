@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './GameBoard.css';
 import Card from '../Card/Card.js';
 
@@ -84,6 +84,10 @@ const GameBoard = () => {
     const [clickedCardName, setClickedCardName] = useState("");
     const [gameOn, setGameOn] = useState(false);
 
+    useEffect(() => {
+        console.log(clickedCardName);
+    }, [clickedCardName])
+
     const startGame = () => {
         setGameOn(true);
     }
@@ -108,7 +112,11 @@ const GameBoard = () => {
                         </div>
                         <div className='game-play-area'>
                             { cardsArray.map((card) => {
-                                return <Card cardName={card.name} cardImageSource={card.image} canBeFlipped={card.canBeFlipped} isClickable={card.isClickable}/>;
+                                return <Card cardName={card.name}
+                                             cardImageSource={card.image}
+                                             canBeFlipped={card.canBeFlipped} 
+                                             isClickable={card.isClickable} 
+                                             setClickedCardName={setClickedCardName}/>;
                             })}
                         </div>
                     </div>

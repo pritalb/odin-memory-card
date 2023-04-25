@@ -21,6 +21,7 @@ const Card = ({cardName, cardImageSource, setClickedCardName, canBeFlipped, isCl
     const onClick = (e) => {
         if (isClickable) {
             console.log("clicked");
+            setClickedCardName(cardName);
             flipCard(2500)
         }
     }
