@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Card.css';
 
-const Card = ({cardName, cardImageSource, canBeFlipped}) => {
+const Card = ({cardName, cardImageSource, setClickedCardName, canBeFlipped, isClickable}) => {
     const [isCardFlipped, setIsCardFlipped] = useState(true);
 
     useEffect(() => {
@@ -19,8 +19,10 @@ const Card = ({cardName, cardImageSource, canBeFlipped}) => {
     }
 
     const onClick = (e) => {
-        console.log("clicked");
-        flipCard(2500)
+        if (isClickable) {
+            console.log("clicked");
+            flipCard(2500)
+        }
     }
 
     return (
