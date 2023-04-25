@@ -20,42 +20,53 @@ const GameBoard = () => {
         {
             name: "Space Ishtar",
             image: "/Assets/Images/spaceIshtar.jpg",
+            canBeFlipped: true,
+            // isFlippedAtStart: true,
         },
         {
             name: "Mashu Kyrielight",
             image: "/Assets/Images/mash.jpg" ,
+            canBeFlipped: true,
         },
         {
             name: "Musashi Miyamoto",
             image: "/Assets/Images/musashi.jpg",
+            canBeFlipped: true,
         },
         {
             name: "Ushiwakamaru",
             image: "/Assets/Images/ushi.png",
+            canBeFlipped: true,
         },
         {
             name: "Anastasia",
             image: "/Assets/Images/anastasia.jpg",
+            canBeFlipped: true,
         },
         {
             name: "Quetzalcoatl",
             image: "/Assets/Images/quetzalcoatl.jpg",
+            canBeFlipped: true,
         },
         {
             name: "BB",
             image: "/Assets/Images/bb.jpg",
+            canBeFlipped: true,
         },
         {
             name: "Artoria Caster",
             image: "/Assets/Images/artoria caster.jpg",
+            canBeFlipped: true,
         },
         {
             name: "Morgan le Fae",
             image: "/Assets/Images/morgan.jpg",
+            canBeFlipped: true,
         },
         {
             name: "Ereshkigal",
             image: "/Assets/Images/ereshkigal.jpg",
+            canBeFlipped: true,
         },
     ])
 
@@ -73,7 +84,7 @@ const GameBoard = () => {
                 </div>
                 <div className='game-play-area'>
                     { cardsArray.map((card) => {
-                        return <Card cardName={card.name} cardImageSource={card.image} />;
+                        return <Card cardName={card.name} cardImageSource={card.image} canBeFlipped={card.canBeFlipped}/>;
                     })}
                 </div>
             </div>
