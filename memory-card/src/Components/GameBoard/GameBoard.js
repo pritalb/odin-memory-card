@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { getRandomArrayElement } from '../../utils';
+import { getRandomArrayElement, shuffleArray } from '../../utils';
 import './GameBoard.css';
 import Card from '../Card/Card.js';
 
@@ -73,6 +73,10 @@ const GameBoard = () => {
     const [gameOn, setGameOn] = useState(false);
     const [score, setScore] = useState(0);
     const [chances, setChances] = useState(3);
+
+    useEffect(() => {
+        setCardsArray(shuffleArray(cardsArray));
+    }, [])
 
     useEffect(() => {
         if (gameOn) {
