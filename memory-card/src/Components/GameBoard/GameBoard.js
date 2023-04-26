@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { getRandomArrayElement } from '../../utils';
 import './GameBoard.css';
 import Card from '../Card/Card.js';
 
@@ -66,7 +67,8 @@ const GameBoard = () => {
         },
     ])
 
-    const [targetCard, setTargetCard] = useState(cardsArray[3]);
+    const [targetCard, setTargetCard] = useState();
+    const [turn, setTurn] = useState(1);
     const [clickedCardName, setClickedCardName] = useState("");
     const [gameOn, setGameOn] = useState(false);
     const [score, setScore] = useState(0);
@@ -77,6 +79,10 @@ const GameBoard = () => {
             compareCards();
         }
     }, [clickedCardName])
+
+    useEffect(() => {
+        setTargetCard(getRandomArrayElement(cardsArray));
+    }, [turn])
 
     const startGame = () => {
         setGameOn(true);
@@ -100,6 +106,7 @@ const GameBoard = () => {
     const correctCard = () => {
         console.log("correct");
         setScore(score + 1);
+        setTurn(turn + 1);
     }
 
     const wrongCard = () => {

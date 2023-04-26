@@ -5,7 +5,7 @@ const randomFromRange = (min, max) => {
 const getRandomArrayElement = (arr) => {
     const len = arr.length;
 
-    return arr(randomFromRange(0, len - 1));
+    return arr[randomFromRange(0, len - 1)];
 }
 
 const shuffleArray = (arr) => {
