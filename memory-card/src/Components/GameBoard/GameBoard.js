@@ -152,8 +152,10 @@ const GameBoard = () => {
                     <div>
                         <div className='target-card-container'>
                             {
-                                turnPlayable &&
-                                <Card cardName={targetCard.name} cardImageSource={targetCard.image} canBeFlipped={false} isClickable={false}/>
+                                turnPlayable ?
+                                    <Card cardName={targetCard.name} cardImageSource={targetCard.image} canBeFlipped={false} isClickable={false}/>
+                                :
+                                    <div> Just a moment.... </div>
                             }
                         </div>
                         <div className='game-play-area'>
