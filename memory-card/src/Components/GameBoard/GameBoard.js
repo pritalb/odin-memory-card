@@ -3,26 +3,12 @@ import './GameBoard.css';
 import Card from '../Card/Card.js';
 
 const GameBoard = () => {
-    // const [cardsArray, setCardsArray] = useState([
-    //     <Card cardName="Space Ishtar" cardImageSource="/Assets/Images/spaceIshtar.jpg" />,
-    //     <Card cardName="Mashu Kyrielight" cardImageSource="/Assets/Images/mash.jpg" />,
-    //     <Card cardName="Musashi Miyamoto" cardImageSource="/Assets/Images/musashi.jpg" />,
-    //     <Card cardName="Ushiwakamaru" cardImageSource="/Assets/Images/ushi.png" />,
-    //     <Card cardName="Anastasia" cardImageSource="/Assets/Images/anastasia.jpg" />,
-    //     <Card cardName="Quetzalcoatl" cardImageSource="/Assets/Images/quetzalcoatl.jpg" />,
-    //     <Card cardName="BB" cardImageSource="/Assets/Images/bb.jpg" />,
-    //     <Card cardName="Artoria Caster" cardImageSource="/Assets/Images/artoria caster.jpg" />,
-    //     <Card cardName="Morgan Le Fae" cardImageSource="/Assets/Images/morgan.jpg" />,
-    //     <Card cardName="Ereshkigal" cardImageSource="/Assets/Images/ereshkigal.jpg" />,
-    // ]);
-
     const [cardsArray, setCardsArray] = useState([
         {
             name: "Space Ishtar",
             image: "/Assets/Images/spaceIshtar.jpg",
             canBeFlipped: true,
             isClickable: true,
-            // isFlippedAtStart: true,
         },
         {
             name: "Mashu Kyrielight",
@@ -97,6 +83,9 @@ const GameBoard = () => {
     }
 
     const stopGame = () => {
+        console.log(`Game Over! your score is ${score}`);
+        setChances(3);
+        setScore(0);
         setGameOn(false);
     }
 
@@ -116,6 +105,10 @@ const GameBoard = () => {
     const wrongCard = () => {
         console.log("wrong");
         setChances(chances - 1);
+        if (chances <= 0) {
+            stopGame();
+            return;
+        }
     }
 
     return (

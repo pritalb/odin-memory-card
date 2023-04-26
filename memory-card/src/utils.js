@@ -2,6 +2,12 @@ const randomFromRange = (min, max) => {
     return Math.floor(Math.random() * (max - min) + min);
 }
 
+const getRandomArrayElement = (arr) => {
+    const len = arr.length;
+
+    return arr(randomFromRange(0, len - 1));
+}
+
 const shuffleArray = (arr) => {
     const len = arr.length;
 
@@ -20,4 +26,4 @@ const shuffleArray = (arr) => {
     return arr;
 }
 
-export { shuffleArray, };
+export { shuffleArray, getRandomArrayElement};
