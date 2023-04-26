@@ -69,6 +69,7 @@ const GameBoard = () => {
 
     const [targetCard, setTargetCard] = useState();
     const [turn, setTurn] = useState(1);
+    const [turnPlayable, setTurnPlayable] = useState(false);
     const [clickedCardName, setClickedCardName] = useState("");
     const [gameOn, setGameOn] = useState(false);
     const [gameOver, setGameOver] = useState(false);
@@ -77,32 +78,38 @@ const GameBoard = () => {
     const [chances, setChances] = useState(3);
 
     useEffect(() => {
-        setCardsArray(shuffleArray(cardsArray));
-    }, [])
-
-    useEffect(() => {
         if (gameOn) {
             compareCards();
         }
     }, [clickedCardName])
 
     useEffect(() => {
-        setTargetCard(getRandomArrayElement(cardsArray));
+        if (setTurnPlayable) {
+            setTargetCard(getRandomArrayElement(cardsArray));
+        }
     }, [turn, gameOn])
 
     const startGame = () => {
         setGameOn(true);
         setGameOver(false);
+        setCardsArray(shuffleArray(cardsArray));
+
+        setTimeout(() => {
+            setTurnPlayable(true);
+        }, 4000);
     }
 
     const stopGame = () => {
         console.log(`Game Over! your score is ${score}`);
         setScoreAtGameOver(score);
 
-        setChances(3);
-        setScore(0);
-        setGameOn(false);
         setGameOver(true);
+        setTurnPlayable(false);
+        setTimeout(() => {
+            setChances(3);
+            setScore(0);
+            setGameOn(false);
+        }, 1500);
     }
 
     const compareCards = () => {
@@ -117,6 +124,10 @@ const GameBoard = () => {
         console.log("correct");
         setScore(score + 1);
         setTurn(turn + 1);
+        setTurnPlayable(false);
+        setTimeout(() => {
+            setTurnPlayable(true);
+        }, 1500)
     }
 
     const wrongCard = () => {
@@ -140,7 +151,10 @@ const GameBoard = () => {
                 ?
                     <div>
                         <div className='target-card-container'>
-                            <Card cardName={targetCard.name} cardImageSource={targetCard.image} canBeFlipped={false} isClickable={false}/>
+                            {
+                                turnPlayable &&
+                                <Card cardName={targetCard.name} cardImageSource={targetCard.image} canBeFlipped={false} isClickable={false}/>
+                            }
                         </div>
                         <div className='game-play-area'>
                             { cardsArray.map((card) => {
