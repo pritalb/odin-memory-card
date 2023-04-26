@@ -22,7 +22,7 @@ const Card = ({cardName, cardImageSource, setClickedCardName, canBeFlipped, isCl
         if (isClickable) {
             console.log("clicked");
             setClickedCardName(cardName);
-            flipCard(2500)
+            flipCard(1500)
         }
     }
 
