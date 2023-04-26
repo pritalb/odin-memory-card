@@ -71,7 +71,9 @@ const GameBoard = () => {
     const [turn, setTurn] = useState(1);
     const [clickedCardName, setClickedCardName] = useState("");
     const [gameOn, setGameOn] = useState(false);
+    const [gameOver, setGameOver] = useState(false);
     const [score, setScore] = useState(0);
+    const [scoreAtGameOver, setScoreAtGameOver] = useState(0);
     const [chances, setChances] = useState(3);
 
     useEffect(() => {
@@ -86,17 +88,21 @@ const GameBoard = () => {
 
     useEffect(() => {
         setTargetCard(getRandomArrayElement(cardsArray));
-    }, [turn])
+    }, [turn, gameOn])
 
     const startGame = () => {
         setGameOn(true);
+        setGameOver(false);
     }
 
     const stopGame = () => {
         console.log(`Game Over! your score is ${score}`);
+        setScoreAtGameOver(score);
+
         setChances(3);
         setScore(0);
         setGameOn(false);
+        setGameOver(true);
     }
 
     const compareCards = () => {
@@ -148,6 +154,13 @@ const GameBoard = () => {
                     </div>
                 :
                     <div>
+                        {
+                            gameOver &&
+                            <div>
+                                Game Over! Your final score is {scoreAtGameOver}.
+                            </div>
+                        }
+
                         <button onClick={startGame}> Start Game </button>
                     </div>
             }
