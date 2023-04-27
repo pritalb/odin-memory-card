@@ -171,7 +171,7 @@ const GameBoard = () => {
                         </div>
                     </div>
                 :
-                    <div>
+                    <div className='new-game-button-container'>
                         {
                             gameOver &&
                             <div>
@@ -179,7 +179,7 @@ const GameBoard = () => {
                             </div>
                         }
 
-                        <button onClick={startGame}> Start Game </button>
+                        <button className='start-game-button' onClick={startGame}> Start Game </button>
                     </div>
             }
         </div>
