@@ -31,7 +31,7 @@ const Card = ({cardName, cardImageSource, setClickedCardName, canBeFlipped, isCl
             <div className='card-sides-container'>
                 <div className='card-front'>
                     <div className='card-front-image-container'>
-                        <img src='/Assets/Images/FGOMagicCircle.png' className='card-front-logo'/>
+                        <img src='./Assets/Images/FGOMagicCircle.png' className='card-front-logo'/>
                     </div>
                     <div className='card-front-text'>
                         Fate/Grand Order
