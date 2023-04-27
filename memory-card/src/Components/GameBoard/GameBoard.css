@@ -13,10 +13,23 @@
     padding: 20px;
 }
 
+.game-area {
+    display: flex;
+    flex-direction: row;
+}
+
 .game-play-area {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(5, auto);
     padding-top: 50px;
     width: 80vw;
-    row-gap: 30px;
+    /* row-gap: 30px; */
+}
+
+.target-card-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
 }

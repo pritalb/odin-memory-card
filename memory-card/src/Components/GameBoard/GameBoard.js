@@ -149,8 +149,10 @@ const GameBoard = () => {
             {
                 gameOn 
                 ?
-                    <div>
+                    <div className='game-area'>
                         <div className='target-card-container'>
+                            <div> Target Card </div>
+
                             {
                                 turnPlayable ?
                                     <Card cardName={targetCard.name} cardImageSource={targetCard.image} canBeFlipped={false} isClickable={false}/>
